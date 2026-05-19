@@ -15,5 +15,5 @@ func main() {
 
 	name := args[1]
 
-	fmt.Println("%s さん CLIは動作しています\n", name)
+	fmt.Printf("%s さん CLIは動作しています\n", name)
 }

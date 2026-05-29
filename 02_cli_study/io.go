@@ -11,7 +11,7 @@ func ReadLine(prompt string) string {
 	fmt.Print(prompt)
 
 	scanner := bufio.NewScanner(os.Stdin)
-	
+
 	scanner.Scan()
 
 	input := scanner.Text()

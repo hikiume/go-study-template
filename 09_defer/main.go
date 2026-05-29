@@ -5,15 +5,14 @@ import (
 	"os"
 )
 
-
-func main(){
+func main() {
 	openFile()
 }
 
-func openFile(){
-	file, _ :=os.Open("./go.mod")
+func openFile() {
+	file, _ := os.Open("./go.mod")
 	defer file.Close()
-	data :=make([]byte,100)
+	data := make([]byte, 100)
 	file.Read(data)
 	fmt.Println(string(data))
 }
@@ -28,12 +27,10 @@ success
 1
 になる
 */
-func sample(){
+func sample() {
 	fmt.Println("run")
 	defer fmt.Println(1)
 	defer fmt.Println(2)
 	defer fmt.Println(3)
 	fmt.Println("success")
 }
-
-

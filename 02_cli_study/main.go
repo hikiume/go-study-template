@@ -6,7 +6,7 @@ import (
 
 func main() {
 
-	readLine :=ReadLine("これはテストです : ")
+	readLine := ReadLine("これはテストです : ")
 
 	fmt.Printf("%s CLIは動作しています\n", readLine)
 }

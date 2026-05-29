@@ -10,7 +10,7 @@ var private string = "private"
 
 type Person struct {
 	Name string
-	Age int
+	Age  int
 }
 
 func Say() {

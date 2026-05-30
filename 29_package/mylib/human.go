@@ -9,7 +9,9 @@ var Public string = "Public"
 var private string = "private"
 
 type Person struct {
+	// Name
 	Name string
+	// Age
 	Age  int
 }
 

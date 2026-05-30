@@ -12,7 +12,7 @@ type Person struct {
 	// Name
 	Name string
 	// Age
-	Age  int
+	Age int
 }
 
 func Say() {

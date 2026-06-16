@@ -1,12 +1,17 @@
 package main
 
 import (
+	"bufio"
 	"log"
 	"os"
 )
 
 func main() {
-	file, err := os.ReadDir("go-study")
+	stdin := os.Stdin
+	scanner := bufio.NewScanner(stdin)
+	scanner.Scan()
+
+	file, err := os.ReadDir(scanner.Text())
 	if err != nil {
 		log.Fatal("フォルダの読み込みに失敗")
 	}

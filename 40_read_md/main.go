@@ -24,7 +24,7 @@ func main() {
 	doc := parser.Parse(reader)
 
 	doc.Dump(source, 0)
-	
-	totalChars :=utf8.RuneCount(source)
-	fmt.Printf("全体の文字数%d 文字\n",totalChars)
+
+	totalChars := utf8.RuneCount(source)
+	fmt.Printf("全体の文字数%d 文字\n", totalChars)
 }

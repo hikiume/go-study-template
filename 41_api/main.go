@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 )
@@ -16,4 +17,12 @@ func main() {
 	defer resp.Body.Close()
 
 	fmt.Printf("Status Code: %d\n", resp.StatusCode)
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatalf("ボディの読み込みに失敗しました")
+	}
+
+	fmt.Printf("Respons Body:%s\n", string(body))
+
 }

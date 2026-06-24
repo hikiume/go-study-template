@@ -23,4 +23,5 @@ func main() {
 	}
 
 	fmt.Println(value["test"])
+	fmt.Println(value["test_num"])
 }

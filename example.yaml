@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  host: "localhost"
+database:
+  user: "root"
+  password: "secret_password"
+  timeout: 5.5
+tags:
+  - "production"
+  - "web"

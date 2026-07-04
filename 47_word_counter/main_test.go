@@ -14,6 +14,7 @@ func TestCountWord(t *testing.T) {
 	}{
 		{name: "正常系", word: strings.Fields("go python go rust go python java"), expect: map[string]int{"go": 3, "python": 2, "rust": 1, "java": 1}},
 		{name: "空のリスト", word: []string{}, expect: map[string]int{}},
+		{name: "引数がnilの場合", word: nil, expect: map[string]int{}},
 	}
 
 	for _, tt := range tests {

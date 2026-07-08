@@ -12,6 +12,12 @@ type User struct {
 }
 
 func main() {
+	sort()
+
+	multiSort()
+}
+
+func sort() {
 	users := []User{
 		{Name: "Taro", Age: 25},
 		{Name: "Hanako", Age: 20},
@@ -23,8 +29,6 @@ func main() {
 	})
 
 	fmt.Println("年齢が低い順:", users)
-
-	multiSort()
 }
 
 // 複数の条件でソート

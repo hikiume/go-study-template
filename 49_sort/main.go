@@ -15,15 +15,11 @@ func main() {
 	slices.Sort(fruites)
 	fmt.Println("文字列のソート後:", fruites)
 
-	descSort()
+	SortDesc(numbers)
 }
 
-func descSort() {
-	numbers := []int{2, 5, 6, 3, 1, 4}
-
-	slices.SortFunc(numbers, func(a, b int) int {
+func SortDesc(nums []int) {
+	slices.SortFunc(nums, func(a, b int) int {
 		return cmp.Compare(b, a)
 	})
-
-	fmt.Println("降順ソート後:", numbers)
 }

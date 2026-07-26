@@ -1,0 +1,16 @@
+openapi: 3.0.0
+info:
+  title: Minimal API
+  version: 1.0.0
+paths:
+  /ping:
+    get:
+      summary: Ping
+      operationId: getPing
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string

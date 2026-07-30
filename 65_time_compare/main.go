@@ -20,4 +20,12 @@ func main() {
 	if t1.Equal(t2) {
 		fmt.Println("t1とt2は同じ日時です")
 	}
+
+	targetDate := time.Date(2026, 12, 30, 0, 0, 0, 0, time.Local)
+
+	if time.Now().Before(targetDate) {
+		fmt.Println("指定日は未来日付です")
+	} else {
+		fmt.Println("指定日は過去または現在です")
+	}
 }

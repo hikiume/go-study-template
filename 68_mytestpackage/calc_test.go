@@ -1,6 +1,9 @@
 package calc
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 // func TestAdd(t *testing.T) {
 // 	got := Add(2, 3)
@@ -48,4 +51,12 @@ func TestDivide(t *testing.T) {
 	if err == nil {
 		t.Fatalf("expected error for division by zero")
 	}
+}
+
+func ExampleAdd() {
+	fmt.Println(Add(2, 3))
+	fmt.Println(Add(-1, 1))
+	// Output:
+	// 5
+	// 0
 }

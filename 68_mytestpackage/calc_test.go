@@ -2,6 +2,7 @@ package calc
 
 import (
 	"fmt"
+	"os"
 	"testing"
 )
 
@@ -51,6 +52,18 @@ func TestDivide(t *testing.T) {
 	if err == nil {
 		t.Fatalf("expected error for division by zero")
 	}
+}
+
+func TestMain(m *testing.M) {
+	// セットアップ (全テスト実行前)
+	fmt.Println("setup")
+
+	code := m.Run() // 全テストを実行
+
+	// クリーンアップ(全テスト実行後)
+	fmt.Println("teardown")
+
+	os.Exit(code) // テスト結果を終了コードとして返す
 }
 
 func ExampleAdd() {

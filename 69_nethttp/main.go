@@ -6,13 +6,21 @@ import (
 	"os"
 )
 
-func main() {
-	http.HandleFunc("GET /hello", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello Go!")
-	})
+type healthHandler struct{}
 
-	fmt.Println("サーバー起動:http://localhost:8080")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+func (h healthHandler) ServeHTTP(
+	w http.ResponseWriter,
+	r *http.Request,
+) {
+	w.WriteHeader(http.StatusOK)
+	fmt.Fprintln(w, "OK")
+}
+
+func main() {
+	mux := http.NewServeMux()
+	mux.Handle("GET /health", healthHandler{})
+
+	if err := http.ListenAndServe(":8080", mux); err != nil {
 		fmt.Fprintf(os.Stderr, "サーバーエラー: %v\n", err)
 		os.Exit(1)
 	}
